@@ -9,11 +9,9 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.aexyn.generalutils.BR
-import com.aexyn.generalutils.MainActivityViewModel
 import com.aexyn.generalutils.extentions.setUI
 import kotlinx.coroutines.flow.collect
 
@@ -21,8 +19,7 @@ import kotlinx.coroutines.flow.collect
 abstract class BaseFragment<Binding : ViewDataBinding, ViewModel : BaseViewModel> : Fragment() {
 
     protected abstract val viewModel: ViewModel
-    private lateinit var binding: Binding
-    private val mainActivityViewModel = getMaiViewModel()
+    protected lateinit var binding: Binding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if(!::binding.isInitialized){
@@ -56,7 +53,7 @@ abstract class BaseFragment<Binding : ViewDataBinding, ViewModel : BaseViewModel
 
     private fun doDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner // it is extra if you want to set life cycle owner in binding
-        binding.setVariable(BR.mainViewModel, mainActivityViewModel)
+        binding.setVariable(BR.mainViewModel, getMaiViewModel())
         binding.setVariable(BR.viewModel, viewModel)
 
         lifecycleScope.launchWhenStarted {

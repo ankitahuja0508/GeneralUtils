@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.fragment.app.activityViewModels
 import com.aexyn.generalutils.BR
-import com.aexyn.generalutils.MainActivityViewModel
 import com.aexyn.generalutils.extentions.setUI
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

@@ -1,44 +1,34 @@
 package com.aexyn.basicutilslibrary
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.aexyn.basicutilslibrary.databinding.FragmentFirstBinding
+import com.aexyn.generalutils.base.BaseFragment
+import com.aexyn.generalutils.base.BaseViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+@AndroidEntryPoint
+class FirstFragment : BaseFragment<FragmentFirstBinding, FirstFragmentViewModel>() {
 
-    private var _binding: FragmentFirstBinding? = null
+    override val viewModel: FirstFragmentViewModel by viewModels()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
-        return binding.root
-
+    override fun getLayoutResId(): Int {
+        return R.layout.fragment_first
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun getMaiViewModel(): BaseViewModel {
+        val mainActivityViewModel: MainActivityViewModel by activityViewModels()
+        return mainActivityViewModel
+    }
 
+    override fun init() {
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

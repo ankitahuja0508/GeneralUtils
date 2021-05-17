@@ -56,7 +56,7 @@ fun Fragment.hideSoftKeyboard() {
     }
 }
 
-fun Fragment.showDeleteAlert(title:String, message:String, onCallback:(Boolean)-> Unit){
+fun Fragment.showAlert(title:String, message:String, onCallback:(Boolean)-> Unit){
     val builder = AlertDialog.Builder(requireContext())
     builder.setTitle(title)
     builder.setMessage(message)
