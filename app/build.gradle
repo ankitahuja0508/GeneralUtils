@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.application'
-    id 'general-plugin'
+    id "com.github.ankitahuja0508"
 }
 
 android {
