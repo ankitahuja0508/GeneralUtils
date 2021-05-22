@@ -21,15 +21,15 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideAppcontext(@ApplicationContext appContext: Context) = appContext
+    fun getAppcontext(@ApplicationContext appContext: Context) = appContext
 
     @Singleton
     @Provides
-    fun provideReadPref(appContext: Context): ReadPref = ReadPref(provideAppcontext(appContext))
+    fun getReadPref(appContext: Context): ReadPref = ReadPref(getAppcontext(appContext))
 
     @Singleton
     @Provides
-    fun provideSavePref(appContext: Context): SavePref = SavePref(appContext)
+    fun getSavePref(appContext: Context): SavePref = SavePref(appContext)
 
     @Singleton
     @Provides
