@@ -1,4 +1,4 @@
-package com.aexyn.generalutils.di
+package com.aexyn.basicutilslibrary.di
 
 
 import android.content.Context
