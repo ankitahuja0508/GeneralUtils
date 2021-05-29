@@ -55,7 +55,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.aexyn.generalUtils'
                 artifactId = 'general_utils'
-                version = '1.0.8'
+                version = '1.0.9'
             }
         }
     }
