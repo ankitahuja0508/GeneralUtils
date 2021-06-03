@@ -1,5 +1,4 @@
 import android.content.Context
-import com.aexyn.generalutils.BuildConfig
 import com.facebook.flipper.android.AndroidFlipperClient
 import com.facebook.flipper.android.utils.FlipperUtils
 import com.facebook.flipper.plugins.databases.DatabasesFlipperPlugin

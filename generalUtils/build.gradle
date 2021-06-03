@@ -42,7 +42,11 @@ android {
 }
 
 dependencies {
-
+    def flipper_version = "0.91.1"
+    def soloader_version = "0.10.1"
+    developmentImplementation "com.facebook.flipper:flipper:$flipper_version"
+    developmentImplementation "com.facebook.flipper:flipper-network-plugin:$flipper_version"
+    developmentImplementation "com.facebook.soloader:soloader:$soloader_version"
 }
 
 afterEvaluate {
@@ -55,7 +59,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.aexyn.generalUtils'
                 artifactId = 'general_utils'
-                version = '1.1.2'
+                version = '1.1.3'
             }
         }
     }
