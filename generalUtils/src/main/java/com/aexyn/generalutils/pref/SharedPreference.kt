@@ -44,7 +44,7 @@ class ReadPref {
         return prefs.getInt(key, -1)
     }
 
-    fun keyExixst(key: String?): Boolean {
+    fun keyExist(key: String?): Boolean {
         return prefs.contains(key)
     }
 

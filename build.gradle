@@ -1,11 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlin_version = "1.4.32"
-    ext.hilt_version = "2.35.1"
     ext.nav_version = "2.3.5"
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
         maven {
             url = uri("https://plugins.gradle.org/m2/")
         }
@@ -15,6 +15,7 @@ buildscript {
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.6.1'
 
         classpath("com.github.ankitahuja0508:AndroidPlugin:1.0.3")
+        classpath("com.github.ankitahuja0508:AndroidPlugin:1.0.8")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
