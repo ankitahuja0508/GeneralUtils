@@ -17,7 +17,6 @@ abstract class BaseDialogFragment<Binding : ViewDataBinding, ViewModel : BaseVie
 
     protected abstract val viewModel: ViewModel
     protected lateinit var binding: Binding
-    private val mainActivityViewModel = getMaiViewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if(!::binding.isInitialized){
@@ -52,7 +51,7 @@ abstract class BaseDialogFragment<Binding : ViewDataBinding, ViewModel : BaseVie
 
     private fun doDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner // it is extra if you want to set life cycle owner in binding
-        binding.setVariable(BR.mainViewModel, mainActivityViewModel)
+        binding.setVariable(BR.mainViewModel, getMaiViewModel())
         binding.setVariable(BR.viewModel, viewModel)
         init()
     }
