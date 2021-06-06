@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id "com.github.ankitahuja0508"
+    //id 'general-plugin'
 }
 
 android {
@@ -40,6 +41,13 @@ android {
         viewBinding true
     }
 }
+
+generalPluginOptions{
+    retrofit{
+        isEnabled = true
+    }
+}
+
 
 dependencies {
     implementation project(":generalUtils")

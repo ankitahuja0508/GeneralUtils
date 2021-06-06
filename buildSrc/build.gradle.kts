@@ -5,10 +5,6 @@ plugins {
 
 gradlePlugin {
     plugins {
-        register("hilt-epoxy-plugin") {
-            id = "hilt-epoxy-plugin"
-            implementationClass = "HiltEpoxyModulePlugin"
-        }
         register("general-plugin") {
             id = "general-plugin"
             implementationClass = "GeneralDependencyModulePlugin"

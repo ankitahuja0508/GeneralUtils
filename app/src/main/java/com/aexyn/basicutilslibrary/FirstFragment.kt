@@ -31,7 +31,14 @@ class FirstFragment : BaseFragment<FragmentFirstBinding, FirstFragmentViewModel>
         }
 
         binding.recyclerView.withModels {
-
+            test {
+                id(0)
+                string("Hello")
+            }
+            test {
+                id(1)
+                string("World")
+            }
         }
     }
 }

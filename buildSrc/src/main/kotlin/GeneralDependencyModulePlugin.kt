@@ -1,5 +1,6 @@
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.dependencies
 
 class GeneralDependencyModulePlugin : Plugin<Project> {
@@ -8,8 +9,13 @@ class GeneralDependencyModulePlugin : Plugin<Project> {
         project.plugins.apply("kotlin-android")
         project.plugins.apply("kotlin-kapt")
         project.plugins.apply("kotlin-parcelize")
-        project.plugins.apply("dagger.hilt.android.plugin")
         project.plugins.apply("androidx.navigation.safeargs.kotlin")
+
+        project.extensions.create<GeneralPluginOptionExtension>("generalPluginOptions")
+
+        project.addRetrofitDependencies()
+
+        project.addHiltDependencies()
 
         // Adds required dependencies for all modules.
 
@@ -40,12 +46,6 @@ class GeneralDependencyModulePlugin : Plugin<Project> {
             add("implementation" , "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
             add("implementation" , "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
 
-            //Dagger - Hilt
-            add("implementation" , "com.google.dagger:hilt-android:2.35.1")
-            add("kapt" , "com.google.dagger:hilt-android-compiler:2.35.1")
-            add("implementation" , "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-            add("kapt" , "androidx.hilt:hilt-compiler:1.0.0")
-
             //Epoxy
             add("kapt" , "com.airbnb.android:epoxy-processor:4.4.4")
             add("implementation" , "com.airbnb.android:epoxy:4.4.4")
@@ -54,8 +54,14 @@ class GeneralDependencyModulePlugin : Plugin<Project> {
             add("implementation" , "com.google.code.gson:gson:2.8.6")
 
             add("implementation" , "com.github.bumptech.glide:glide:4.12.0")
+            add("kapt" , "com.github.bumptech.glide:compiler:4.12.0")
 
             add("implementation" , "androidx.preference:preference-ktx:1.1.1")
+
+            // Moshi
+            add("implementation" , "com.squareup.moshi:moshi-kotlin:1.12.0")
+            add("implementation" , "com.squareup.moshi:moshi-adapters:1.12.0")
+            add("kapt" , "com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
 
             add("testImplementation", "junit:junit:4.12")
             add("androidTestImplementation", "androidx.test.ext:junit:1.1.2")
