@@ -29,5 +29,9 @@ class FirstFragment : BaseFragment<FragmentFirstBinding, FirstFragmentViewModel>
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+        binding.recyclerView.withModels {
+
+        }
     }
 }

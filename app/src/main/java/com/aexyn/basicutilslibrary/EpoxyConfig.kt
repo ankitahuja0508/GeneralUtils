@@ -1,6 +1,5 @@
-package com.aexyn.generalutils.utils
+package com.aexyn.basicutilslibrary
 
-import com.aexyn.generalutils.R
 import com.airbnb.epoxy.EpoxyDataBindingPattern
 
 @EpoxyDataBindingPattern(rClass = R::class, layoutPrefix = "item")
