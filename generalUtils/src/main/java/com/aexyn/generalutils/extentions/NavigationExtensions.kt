@@ -23,9 +23,11 @@ import androidx.core.util.set
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.aexyn.generalutils.R
+import com.aexyn.generalutils.utils.Constants.Companion.SELECTED_RESELETED_ITEM
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
@@ -86,6 +88,9 @@ fun BottomNavigationView.setupWithNavController(
 
     // When a navigation item is selected
     setOnNavigationItemSelectedListener { item ->
+        LocalBroadcastManager.getInstance(context).sendBroadcast(Intent(SELECTED_RESELETED_ITEM).apply {
+            putExtra("item", item.itemId)
+        })
         // Don't do anything if the state is state has already been saved.
         if (fragmentManager.isStateSaved) {
             false
@@ -184,6 +189,9 @@ private fun BottomNavigationView.setupItemReselected(
     fragmentManager: FragmentManager
 ) {
     setOnNavigationItemReselectedListener { item ->
+        LocalBroadcastManager.getInstance(context).sendBroadcast(Intent(SELECTED_RESELETED_ITEM).apply {
+            putExtra("item", item.itemId)
+        })
         val newlySelectedItemTag = graphIdToTagMap[item.itemId]
         val selectedFragment = fragmentManager.findFragmentByTag(newlySelectedItemTag)
             as NavHostFragment
