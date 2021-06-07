@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'maven-publish'
-    id "com.github.ankitahuja0508"
-    //id 'general-plugin'
+    //id "com.github.ankitahuja0508"
+    id 'general-plugin'
 }
 
 android {
@@ -48,6 +48,10 @@ dependencies {
     developmentImplementation "com.facebook.flipper:flipper:$flipper_version"
     developmentImplementation "com.facebook.flipper:flipper-network-plugin:$flipper_version"
     developmentImplementation "com.facebook.soloader:soloader:$soloader_version"
+
+    testImplementation "junit:junit:4.12"
+    androidTestImplementation "androidx.test.ext:junit:1.1.2"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
 }
 
 afterEvaluate {

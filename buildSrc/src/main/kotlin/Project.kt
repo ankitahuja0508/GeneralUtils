@@ -24,9 +24,32 @@ fun Project.addHiltDependencies(configurationName: String = "implementation") {
         dependencies {
             //Dagger - Hilt
             add("implementation" , "com.google.dagger:hilt-android:2.35.1")
-            add("kapt" , "com.google.dagger:hilt-android-compiler:2.35.1")
             add("implementation" , "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+        }
+    }
+}
+
+fun Project.addKaptDependencies(configurationName: String = "implementation") {
+    val dependenciesOption = extensions.getByType<GeneralPluginOptionExtension>().dependencyOption
+    if(dependenciesOption.addKapt) {
+        dependencies {
+
+            // Hilt kapt
+            add("kapt" , "com.google.dagger:hilt-android-compiler:2.35.1")
             add("kapt" , "androidx.hilt:hilt-compiler:1.0.0")
+
+            // Epoxy kapy
+            add("kapt" , "com.airbnb.android:epoxy-processor:4.4.4")
+
+            // Glide kapt
+            add("kapt" , "com.github.bumptech.glide:compiler:4.12.0")
+
+            // Glide kapt
+            add("kapt" , "com.github.bumptech.glide:compiler:4.12.0")
+
+            // Moshi kapt
+            add("kapt" , "com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
+
         }
     }
 }
