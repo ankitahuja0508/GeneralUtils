@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'maven-publish'
-    //id "com.github.ankitahuja0508"
-    id 'general-plugin'
+    id "com.github.ankitahuja0508"
+    //id 'general-plugin'
 }
 
 android {
@@ -42,6 +42,15 @@ android {
     }
 }
 
+generalPluginOptions{
+    retrofit {
+        isEnabled = true
+    }
+    dependencyOption{
+        addKapt = true
+    }
+}
+
 dependencies {
     def flipper_version = "0.91.1"
     def soloader_version = "0.10.1"
@@ -64,7 +73,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.aexyn.generalUtils'
                 artifactId = 'general_utils'
-                version = '1.1.5'
+                version = '1.1.6'
             }
         }
     }
