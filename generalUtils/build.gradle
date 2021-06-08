@@ -81,19 +81,15 @@ dependencies {
     api "androidx.preference:preference-ktx:1.1.1"
 
     // Moshi
-    api "com.squareup.moshi:moshi-kotlin:$moshi_version"
-    api "com.squareup.moshi:moshi-adapters:$moshi_version"
+    //api "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    //api "com.squareup.moshi:moshi-adapters:$moshi_version"
 
     def flipper_version = "0.91.1"
     def soloader_version = "0.10.1"
 
-    developmentImplementation "com.facebook.flipper:flipper:$flipper_version"
-    developmentImplementation "com.facebook.flipper:flipper-network-plugin:$flipper_version"
-    developmentImplementation "com.facebook.soloader:soloader:$soloader_version"
-
-    debugApi "com.facebook.flipper:flipper:$flipper_version"
-    debugApi "com.facebook.flipper:flipper-network-plugin:$flipper_version"
-    debugApi "com.facebook.soloader:soloader:$soloader_version"
+    api "com.facebook.flipper:flipper:$flipper_version"
+    api "com.facebook.flipper:flipper-network-plugin:$flipper_version"
+    api "com.facebook.soloader:soloader:$soloader_version"
 
     api "com.squareup.okhttp3:okhttp:4.9.1"
     api "com.squareup.okio:okio:2.10.0"
@@ -107,7 +103,7 @@ dependencies {
     api 'com.intuit.ssp:ssp-android:1.0.6'
     api 'com.intuit.sdp:sdp-android:1.0.6'
 
-    // Epoxy kapy
+    // Epoxy kapt
     kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
 
     // Glide kapt
@@ -134,7 +130,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.aexyn.generalUtils'
                 artifactId = 'general_utils'
-                version = '1.1.20'
+                version = '1.1.21'
             }
         }
     }
