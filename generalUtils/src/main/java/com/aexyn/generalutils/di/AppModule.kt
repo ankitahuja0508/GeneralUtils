@@ -3,10 +3,10 @@ package com.aexyn.generalutils.di
 import android.content.Context
 import com.aexyn.generalutils.api.HeaderInterceptor
 import com.aexyn.generalutils.api.RetrofitBuilder.getRetrofit
+import com.aexyn.generalutils.constants.Constants.Companion.BASE_URL
+import com.aexyn.generalutils.constants.Constants.Companion.deviceId
 import com.aexyn.generalutils.pref.ReadPref
 import com.aexyn.generalutils.pref.SavePref
-import com.aexyn.generalutils.utils.Constants.Companion.BASE_URL
-import com.aexyn.generalutils.utils.Constants.Companion.deviceId
 import com.aexyn.generalutils.utils.DispatcherProvider
 import com.google.gson.Gson
 import dagger.Module
