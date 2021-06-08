@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -56,6 +57,14 @@ dependencies {
 
     // Moshi kapt
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+
+    // Hilt dependency injection
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_viewmodel_version"
+
+    // Hilt kapt
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_compiler_version"
 
     testImplementation "junit:junit:4.12"
     androidTestImplementation "androidx.test.ext:junit:1.1.2"
