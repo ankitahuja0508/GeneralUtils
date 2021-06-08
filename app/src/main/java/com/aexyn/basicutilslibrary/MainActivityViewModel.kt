@@ -1,10 +1,12 @@
 package com.aexyn.basicutilslibrary
 
 import com.aexyn.generalutils.base.BaseViewModel
+import com.aexyn.generalutils.utils.DispatcherProvider
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 
-class MainActivityViewModel(
+@HiltViewModel
+class MainActivityViewModel @Inject constructor(dispatcherProvider: DispatcherProvider
 ) : BaseViewModel() {
-
-
 }

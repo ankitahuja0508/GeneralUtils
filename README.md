@@ -55,9 +55,7 @@ Add following code in dependencies block of your project level **build.gradle** 
 
     // Hilt dependency injection
     implementation "com.google.dagger:hilt-android:$hilt_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_viewmodel_version"
 
     // Hilt kapt
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-    kapt "androidx.hilt:hilt-compiler:$hilt_compiler_version"
 ```

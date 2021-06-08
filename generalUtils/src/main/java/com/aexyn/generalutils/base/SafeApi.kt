@@ -26,7 +26,7 @@ suspend fun <T> callApi(error:String, apiCall: suspend () -> Response<T>): Resul
         }
     } catch (throwable: Throwable) {
         when (throwable) {
-            is IOException -> Result.Error("Network Error") //Result.NetworkError
+            is IOException -> Result.NetworkError(throwable.localizedMessage ?: "Network error")
             is HttpException -> {
                 val code = throwable.code()
                 val errorResponse = convertErrorBody(throwable.response())
