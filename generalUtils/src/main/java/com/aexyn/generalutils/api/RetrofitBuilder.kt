@@ -1,6 +1,8 @@
 package com.aexyn.generalutils.api
 import DevUtils
 import android.os.Build
+import com.aexyn.generalutils.constants.Constants.Companion.APP_TYPE_HEADER_KEY
+import com.aexyn.generalutils.constants.Constants.Companion.APP_TYPE_HEADER_VALUE
 import com.aexyn.generalutils.pref.ReadPref
 import com.squareup.moshi.Moshi
 import okhttp3.Interceptor
@@ -51,7 +53,8 @@ class HeaderInterceptor(val readPref: ReadPref, val deviceId:String) : Intercept
                         "X-OS-DEVICE",
                         Build.MODEL + " (" + Build.PRODUCT + ")"
                 )
-                .addHeader("apptype", "admin")
+                if(APP_TYPE_HEADER_KEY.isNotEmpty() && APP_TYPE_HEADER_VALUE.isNotEmpty())
+                    requestBuilder.addHeader(APP_TYPE_HEADER_KEY, APP_TYPE_HEADER_VALUE)
 
         if(request.header("No-Authentication")==null){
             val token = readPref.getStringValue("token")

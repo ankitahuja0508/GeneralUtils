@@ -27,7 +27,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.aexyn.generalutils.R
-import com.aexyn.generalutils.utils.Constants.Companion.SELECTED_RESELETED_ITEM
+import com.aexyn.generalutils.constants.Constants.Companion.SELECTED_RESELETED_ITEM
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
