@@ -91,9 +91,9 @@ dependencies {
     developmentImplementation "com.facebook.flipper:flipper-network-plugin:$flipper_version"
     developmentImplementation "com.facebook.soloader:soloader:$soloader_version"
 
-    debugImplementation "com.facebook.flipper:flipper:$flipper_version"
-    debugImplementation "com.facebook.flipper:flipper-network-plugin:$flipper_version"
-    debugImplementation "com.facebook.soloader:soloader:$soloader_version"
+    debugApi "com.facebook.flipper:flipper:$flipper_version"
+    debugApi "com.facebook.flipper:flipper-network-plugin:$flipper_version"
+    debugApi "com.facebook.soloader:soloader:$soloader_version"
 
     api "com.squareup.okhttp3:okhttp:4.9.1"
     api "com.squareup.okio:okio:2.10.0"
