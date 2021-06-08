@@ -6,20 +6,19 @@ import com.bumptech.glide.Glide
 
 class BindingAdapters {
     companion object {
-        @BindingAdapter("imageIcon")
-        @JvmStatic
-        fun imageIcon(view: ImageView, icon:Int) {
-            view.setImageResource(icon)
-        }
 
-        @BindingAdapter("loadImage")
+        @BindingAdapter("loadImageOrIcon")
         @JvmStatic
-        fun loadImage(view: ImageView, any: Any?) {
+        fun loadImageOrIcon(view: ImageView, any: Any?) {
             if(any != null)
-                Glide.with(view.context)
+                if(any is Int){
+                    view.setImageResource(any)
+                }else {
+                    Glide.with(view.context)
                         .load(any)
                         .centerCrop()
                         .into(view)
+                }
             else
                 view.setImageResource(0)
         }
