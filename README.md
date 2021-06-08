@@ -42,7 +42,7 @@ plugins {
 Add following code in dependencies block of your project level **build.gradle** file. Add as it is, do not change variable names or versions of kapt.
 
 ```groovy
-   implementation 'com.github.ankitahuja0508:GeneralUtils:1.1.9'
+   implementation 'com.github.ankitahuja0508:GeneralUtils:1.1.13'
     
     // Epoxy kapy
     kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
