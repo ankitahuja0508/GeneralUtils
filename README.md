@@ -19,10 +19,19 @@ add below code
 maven { url 'https://jitpack.io' }
 ```
 
+Add below variables in buildScript block in top level **build.gradle** above repositories block.
+```groovy
+    ext.nav_version = "2.3.5"
+    ext.epoxy_version = "4.5.0"
+    ext.moshi_version = "1.12.0"
+    ext.glide_version = "4.12.0"
+    ext.hilt_version = "2.36"
+```
+
 Add classpath in dependencies block of build script in root level **build.gradle**
 
 ```groovy
-    classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
+    classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
     classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 ```
 
