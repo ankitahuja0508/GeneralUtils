@@ -23,6 +23,7 @@ Add classpath in dependencies block of build script in root level **build.gradle
 
 ```groovy
     classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
+    classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 ```
 
 Replace plugins block of your project level **build.gradle** file with below code
@@ -34,6 +35,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
 }
 ```
 
@@ -50,4 +52,12 @@ Add following code in dependencies block of your project level **build.gradle** 
 
     // Moshi kapt
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+
+    // Hilt dependency injection
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_viewmodel_version"
+
+    // Hilt kapt
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_compiler_version"
 ```
