@@ -60,7 +60,7 @@ kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
 kapt "com.github.bumptech.glide:compiler:$glide_version"
 
 // Moshi kapt
-kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+//kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
 
 // Hilt dependency injection
 implementation "com.google.dagger:hilt-android:$hilt_version"

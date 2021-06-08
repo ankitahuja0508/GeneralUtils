@@ -4,12 +4,11 @@ import android.os.Build
 import com.aexyn.generalutils.constants.Constants.Companion.APP_TYPE_HEADER_KEY
 import com.aexyn.generalutils.constants.Constants.Companion.APP_TYPE_HEADER_VALUE
 import com.aexyn.generalutils.pref.ReadPref
-import com.squareup.moshi.Moshi
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitBuilder {
@@ -27,7 +26,7 @@ object RetrofitBuilder {
 
         return Retrofit.Builder()
                 .baseUrl(baseUrl)
-                .addConverterFactory(MoshiConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClientBuilder.build())
                 .build()
     }
