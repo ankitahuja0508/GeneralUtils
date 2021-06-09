@@ -1,8 +1,8 @@
 package com.aexyn.basicutilslibrary
 
-import DevUtils
 import android.app.Application
 import com.aexyn.generalutils.constants.Constants.Companion.BASE_URL
+import com.aexyn.generalutils.utils.DevUtils
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp

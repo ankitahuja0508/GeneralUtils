@@ -1,3 +1,5 @@
+package com.aexyn.generalutils.utils
+
 import android.content.Context
 import com.aexyn.generalutils.BuildConfig
 import com.facebook.flipper.android.AndroidFlipperClient
