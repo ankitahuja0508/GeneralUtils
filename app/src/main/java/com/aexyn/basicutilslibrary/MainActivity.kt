@@ -3,6 +3,7 @@ package com.aexyn.basicutilslibrary
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -10,6 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.aexyn.basicutilslibrary.databinding.ActivityMainBinding
+import com.aexyn.generalutils.utils.ConnectivityLiveData
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,6 +38,14 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+        }
+
+        ConnectivityLiveData(this).observe(this){
+            if(it.isConnected){
+                Snackbar.make(binding.fab, " : Connected", Snackbar.LENGTH_LONG).show()
+            }else{
+                Snackbar.make(binding.fab, "Not Connected", Snackbar.LENGTH_LONG).show()
+            }
         }
     }
 

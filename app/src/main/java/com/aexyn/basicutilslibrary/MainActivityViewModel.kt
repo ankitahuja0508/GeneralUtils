@@ -48,7 +48,7 @@ class MainActivityViewModel @Inject constructor(val repository: HomeRepository, 
                     _getList.value = TestListEvent.NetworkError
                 }
                 is Result.Success -> {
-                    _getList.value = TestListEvent.Success(repository.resultList!!, "")
+                    _getList.value = TestListEvent.Success(repository.resultList ?: arrayListOf(), "")
                 }
             }
         }
