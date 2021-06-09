@@ -29,7 +29,7 @@ class MainActivityViewModel @Inject constructor(val repository: HomeRepository, 
     val getList: StateFlow<TestListEvent> = _getList
 
     init {
-        //testApi()
+        testApi()
     }
 
     fun testApi(){

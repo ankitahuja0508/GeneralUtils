@@ -6,6 +6,7 @@ class Constants {
         var API_VERSION :String = ""
         var deviceId = ""
         val SELECTED_RESELETED_ITEM = "SELECTED_RESELETED_ITEM"
+        val NETWORK_ERROR = "NETWORK_ERROR"
         var APP_TYPE_HEADER_KEY = ""
         var APP_TYPE_HEADER_VALUE = ""
     }

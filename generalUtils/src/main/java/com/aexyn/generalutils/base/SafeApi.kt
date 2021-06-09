@@ -1,15 +1,21 @@
 package com.aexyn.generalutils.base
 
+import android.content.Context
+import android.content.Intent
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.aexyn.generalutils.api.Result
+import com.aexyn.generalutils.constants.Constants.Companion.NETWORK_ERROR
 import com.aexyn.generalutils.utils.ErrorResponse
 import com.google.gson.Gson
+import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
+import kotlin.coroutines.coroutineContext
 
 //https://medium.com/@douglas.iacovelli/how-to-handle-errors-with-retrofit-and-coroutines-33e7492a912
 
-suspend fun <T> callApi(error:String, apiCall: suspend () -> Response<T>): Result<T> {
+suspend fun <T> callApi(context:Context, error:String, apiCall: suspend () -> Response<T>): Result<T> {
     return try {
 
         val response = apiCall.invoke()
@@ -26,7 +32,10 @@ suspend fun <T> callApi(error:String, apiCall: suspend () -> Response<T>): Resul
         }
     } catch (throwable: Throwable) {
         when (throwable) {
-            is IOException -> Result.NetworkError(throwable.localizedMessage ?: "Network error")
+            is IOException -> {
+                context.sendBroadcast(Intent(NETWORK_ERROR))
+                Result.NetworkError(throwable.localizedMessage ?: "Network error")
+            }
             is HttpException -> {
                 val code = throwable.code()
                 val errorResponse = convertErrorBody(throwable.response())

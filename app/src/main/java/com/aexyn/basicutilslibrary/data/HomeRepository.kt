@@ -1,14 +1,16 @@
 package com.aexyn.basicutilslibrary.data
 
 
+import android.content.Context
 import com.aexyn.basicutilslibrary.data.api.HomeApi
 import com.aexyn.generalutils.api.Result
 import com.aexyn.generalutils.base.BaseResponse
 import com.aexyn.generalutils.base.callApi
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 
-class HomeRepository @Inject constructor(private val homeApi: HomeApi) {
+class HomeRepository @Inject constructor(val appContext: Context, private val homeApi: HomeApi) {
 
     var resultList: ArrayList<String>? = null
         private set
@@ -19,7 +21,7 @@ class HomeRepository @Inject constructor(private val homeApi: HomeApi) {
 
     suspend fun getTestQuery(): Result<BaseResponse> {
 
-        val response = callApi("An error occurred while fetching result list") {
+        val response = callApi(appContext,"An error occurred while fetching result list") {
             homeApi.testApi()
         }
 
