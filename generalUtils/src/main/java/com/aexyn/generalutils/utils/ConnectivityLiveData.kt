@@ -13,6 +13,8 @@ import android.net.NetworkRequest
 import android.os.Build
 import androidx.lifecycle.LiveData
 
+//https://medium.com/@kiitvishal89/android-listening-to-connectivity-changes-the-correct-way-a614f0d6d2af
+
 // States represented as enums
 enum class NetworkState(val isConnected : Boolean) {
 
