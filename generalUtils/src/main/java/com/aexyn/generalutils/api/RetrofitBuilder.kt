@@ -1,9 +1,10 @@
 package com.aexyn.generalutils.api
-import DevUtils
+
 import android.os.Build
 import com.aexyn.generalutils.constants.Constants.Companion.APP_TYPE_HEADER_KEY
 import com.aexyn.generalutils.constants.Constants.Companion.APP_TYPE_HEADER_VALUE
 import com.aexyn.generalutils.pref.ReadPref
+import com.aexyn.generalutils.utils.DevUtils
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
