@@ -25,7 +25,7 @@ suspend fun <T> callApi(context:Context, error:String, apiCall: suspend () -> Re
         }else{
             val errorResponse: ErrorResponse? = convertErrorBody(response)
             if(response.code() == 401){
-                Result.AuthenticationFailed(errorResponse?.error!!)
+                Result.AuthenticationFailed(errorResponse?.message ?: errorResponse?.error ?: error)
             }else{
                 Result.Error(errorResponse?.message ?: errorResponse?.error ?: error)
             }
