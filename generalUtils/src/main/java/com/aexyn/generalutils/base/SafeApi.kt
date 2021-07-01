@@ -27,7 +27,7 @@ suspend fun <T> callApi(context:Context, error:String, apiCall: suspend () -> Re
             if(response.code() == 401){
                 Result.AuthenticationFailed(errorResponse?.error!!)
             }else{
-                Result.Error(errorResponse?.error!!)
+                Result.Error(errorResponse?.message ?: errorResponse?.error ?: error)
             }
         }
     } catch (throwable: Throwable) {
@@ -39,7 +39,7 @@ suspend fun <T> callApi(context:Context, error:String, apiCall: suspend () -> Re
             is HttpException -> {
                 val code = throwable.code()
                 val errorResponse = convertErrorBody(throwable.response())
-                Result.Error(errorResponse?.error!!)
+                Result.Error(errorResponse?.message ?: errorResponse?.error ?: error)
             }
             else -> {
                 Result.Error(throwable.localizedMessage ?: error)
