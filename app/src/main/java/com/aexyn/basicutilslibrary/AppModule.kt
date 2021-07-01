@@ -15,6 +15,6 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideHomeApi(appContext: Context): HomeApi = provideRetrofit(appContext).create(HomeApi::class.java)
+    fun provideHomeApi(appContext: Context): HomeApi = provideRetrofit().create(HomeApi::class.java)
 
 }

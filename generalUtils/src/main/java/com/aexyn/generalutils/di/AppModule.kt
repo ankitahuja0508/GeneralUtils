@@ -4,7 +4,6 @@ import android.content.Context
 import com.aexyn.generalutils.api.HeaderInterceptor
 import com.aexyn.generalutils.api.RetrofitBuilder.getRetrofit
 import com.aexyn.generalutils.constants.Constants.Companion.BASE_URL
-import com.aexyn.generalutils.constants.Constants.Companion.deviceId
 import com.aexyn.generalutils.pref.ReadPref
 import com.aexyn.generalutils.pref.SavePref
 import com.aexyn.generalutils.utils.DispatcherProvider
@@ -42,11 +41,11 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideHeaderInterceptor(appContext: Context): Interceptor = HeaderInterceptor(provideReadPref(appContext), deviceId)
+    fun provideHeaderInterceptor(): Interceptor = HeaderInterceptor()
 
     @Singleton
     @Provides
-    fun provideRetrofit(appContext: Context): Retrofit = getRetrofit(BASE_URL, provideHeaderInterceptor(appContext))
+    fun provideRetrofit(): Retrofit = getRetrofit(BASE_URL, provideHeaderInterceptor())
 
     @Singleton
     @Provides
