@@ -20,7 +20,7 @@ repositories {
 dependencies {
     compileOnly(gradleApi())
 
-    api("com.android.tools.build:gradle:4.2.1")
+    api("com.android.tools.build:gradle:4.2.2")
     api(kotlin("gradle-plugin", "1.4.32"))
     api("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5")
 }
