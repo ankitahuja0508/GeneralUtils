@@ -38,29 +38,31 @@ class HeaderInterceptor : Interceptor {
 
         val requestBuilder = request.newBuilder()
 
-       /* requestBuilder
-            .addHeader("content-type", "application/json")
-            .addHeader("X-OS-TYPE", "android")
-            .addHeader("X-DEVICE-ID", deviceId)
-            .addHeader(
-                "X-OS-VERSION",
-                Build.VERSION.SDK_INT.toString() + " (" + Build.VERSION_CODES::class.java.fields[Build.VERSION.SDK_INT].name + ")"
-            )
-            .addHeader(
-                "X-OS-DEVICE",
-                Build.MODEL + " (" + Build.PRODUCT + ")"
-            )
+        /* requestBuilder
+             .addHeader("content-type", "application/json")
+             .addHeader("X-OS-TYPE", "android")
+             .addHeader("X-DEVICE-ID", deviceId)
+             .addHeader(
+                 "X-OS-VERSION",
+                 Build.VERSION.SDK_INT.toString() + " (" + Build.VERSION_CODES::class.java.fields[Build.VERSION.SDK_INT].name + ")"
+             )
+             .addHeader(
+                 "X-OS-DEVICE",
+                 Build.MODEL + " (" + Build.PRODUCT + ")"
+             )
 
-        if(request.header("No-Authentication")==null){
-            val token = readPref.getStringValue("token")
+         if(request.header("No-Authentication")==null){
+             val token = readPref.getStringValue("token")
 
-            val authHeaderKey = "Authorization"
+             val authHeaderKey = "Authorization"
 
-            if(!token.isNullOrEmpty()) {
-                val finalToken = "Bearer $token"
-                requestBuilder.addHeader(authHeaderKey, finalToken)
-            }
-        }*/
+             if(!token.isNullOrEmpty()) {
+                 val finalToken = "Bearer $token"
+                 requestBuilder.addHeader(authHeaderKey, finalToken)
+             }
+         }*/
+
+        requestBuilder.addHeader("content-type", "application/json")
 
         CUSTOM_HEADERS.forEach {
             requestBuilder.addHeader(it.key, it.value)
