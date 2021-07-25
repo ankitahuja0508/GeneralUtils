@@ -4,6 +4,6 @@ open class BaseResponse{
 
     open val message: String? = ""
 
-    open val success: Boolean = true
+    open val success: Boolean = false
 
 }
