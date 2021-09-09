@@ -27,11 +27,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     buildFeatures {
@@ -83,7 +83,7 @@ dependencies {
     //api "com.squareup.moshi:moshi-kotlin:$moshi_version"
     //api "com.squareup.moshi:moshi-adapters:$moshi_version"
 
-    def flipper_version = "0.91.1"
+    def flipper_version = "0.104.0"
     def soloader_version = "0.10.1"
 
     api "com.facebook.flipper:flipper:$flipper_version"
@@ -129,7 +129,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.aexyn.generalUtils'
                 artifactId = 'general_utils'
-                version = '1.1.34'
+                version = '1.1.35'
             }
         }
     }

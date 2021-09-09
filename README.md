@@ -25,7 +25,7 @@ ext.nav_version = "2.3.5"
 ext.epoxy_version = "4.5.0"
 ext.moshi_version = "1.12.0"
 ext.glide_version = "4.12.0"
-ext.hilt_version = "2.36"
+ext.hilt_version = "2.38.1"
 ```
 
 Add classpath in dependencies block of build script in root level **build.gradle**
