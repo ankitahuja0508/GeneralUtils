@@ -22,7 +22,7 @@ maven { url 'https://jitpack.io' }
 Add below variables in buildScript block in top level **build.gradle** above repositories block.
 ```groovy
 ext.nav_version = "2.3.5"
-ext.epoxy_version = "4.5.0"
+ext.epoxy_version = "4.6.2"
 ext.moshi_version = "1.12.0"
 ext.glide_version = "4.12.0"
 ext.hilt_version = "2.38.1"
